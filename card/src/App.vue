@@ -1,8 +1,9 @@
 <template>
  
   
-  <ParentF/>
+  
   <Home/>
+  <ParentF/>
 </template>
 
 <script>
