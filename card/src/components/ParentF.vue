@@ -7,14 +7,14 @@
         <div class="radial">
         <div class="formdiv">
           <form class="form">
-            <lable for="email">Email</lable><input type="email" placeholder="Email" id="email">
-            <lable for="name">Name</lable><input type="text" placeholder="Name" id="name">
-            <lable for="date">Date of Birth</lable><input type="date" placeholder="Date of Birth" id="date">
-            <lable for="password">Password</lable><input type="password" placeholder="Password"  id="password">
-            <lable for="Password">Confirm Password</lable><input type="password" placeholder="Confirm password" id="password">
-            <lable for="termsandconditions">Terms and conditions </lable><input type="checkbox" id="termsandconditions">
+            <lable for="email">Email</lable><input type="email" placeholder="Email" v-model="email" id="email">
+            <lable for="name">Name</lable><input type="text" placeholder="Name" v-model="name" id="name">
+            <lable for="date">dob</lable><input type="date" placeholder="Date of Birth" v-model="dob" id="dob">
+            <lable for="password">Password</lable><input type="password" placeholder="Password" v-model="password" id="password">
+            <lable for="Password">Confirm Password</lable><input type="password" v-model="password" placeholder="Confirm password" id="password">
+            <lable for="termsandconditions">Terms and conditions </lable><input type="checkbox" v-model="termsandconditions" id="termsandconditions">
           </form>
-          <button class="button">Submit</button>
+          <button class="button" v-on:click.prevent="submit()">Submit</button>
         </div>
 
     </div>
@@ -28,6 +28,14 @@ export default {
     name:`ParentF`,
     components:{
         Form
+    },
+    methods:{
+        submit(){
+            this.$emit("submit-item",this.email,this.name,this.dob);
+            this.email="",
+            this.name="",
+            this.bob=""
+        }
     }
 
 }

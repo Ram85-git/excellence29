@@ -2,13 +2,12 @@
  
   
   
-  <Home/>
-  <ParentF/>
+  <Table/>
 </template>
 
 <script>
-import Home from './components/Home.vue';
-import ParentF from './components/ParentF.vue';
+import Table from './components/Table.vue'
+
 
 
 
@@ -16,8 +15,10 @@ import ParentF from './components/ParentF.vue';
 export default {
     name: `App`,
     components: {
-      Home,
-      ParentF
+      Table,
+      
+      
+      
       
       
     }
