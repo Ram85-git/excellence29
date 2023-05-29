@@ -3,8 +3,11 @@
     <template v-slot:title>
         <h1>Application Form</h1>
     </template>
-    <template>
-        
+    <template v-slot:main>
+        <form>
+            
+        </form>
+
     </template>
 
 </Form>
