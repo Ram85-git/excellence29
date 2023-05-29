@@ -1,18 +1,23 @@
 <template>
+ 
   
-  
+  <ParentF/>
   <Home/>
 </template>
 
 <script>
 import Home from './components/Home.vue';
+import ParentF from './components/ParentF.vue';
+
 
 
 
 export default {
     name: `App`,
     components: {
-      Home
+      Home,
+      ParentF
+      
       
     }
     
