@@ -7,11 +7,11 @@
         <div class="radial">
         <div class="formdiv">
           <form class="form">
-            <lable for="email">Email</lable><input type="email" id="email">
-            <lable for="name">Name</lable><input type="text" id="name">
-            <lable for="date">Date of Birth</lable><input type="date" id="date">
-            <lable for="password">Password</lable><input type="passwod" id="password">
-            <lable for="Password">Confirm Password</lable><input type="password" id="password">
+            <lable for="email">Email</lable><input type="email" placeholder="Email" id="email">
+            <lable for="name">Name</lable><input type="text" placeholder="Name" id="name">
+            <lable for="date">Date of Birth</lable><input type="date" placeholder="Date of Birth" id="date">
+            <lable for="password">Password</lable><input type="password" placeholder="Password"  id="password">
+            <lable for="Password">Confirm Password</lable><input type="password" placeholder="Confirm password" id="password">
             <lable for="termsandconditions">Terms and conditions </lable><input type="checkbox" id="termsandconditions">
           </form>
           <button class="button">Submit</button>
