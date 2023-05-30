@@ -1,13 +1,13 @@
 <template>
  
   
-  
+  <Home/>
   <Table/>
 </template>
 
 <script>
 import Table from './components/Table.vue'
-
+import Home from './components/Home.vue'
 
 
 
@@ -15,7 +15,9 @@ import Table from './components/Table.vue'
 export default {
     name: `App`,
     components: {
+      Home,
       Table,
+      
       
       
       
