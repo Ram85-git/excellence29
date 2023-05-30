@@ -26,19 +26,104 @@
 import Form from './Form.vue';
 export default {
     name:`ParentF`,
+    
     components:{
         Form
     },
+    data(){
+        return{
+            email:"",
+            name:"",
+            password:"",
+            dob:"",
+        }
+    },
+    props:{
+        editEmail:{
+            type:String,
+            requre:true
+        },
+        editIndex:{
+            type:Number,
+            requre:true
+        }
+
+     
+
+
+    },
+    watch:{
+        editEmail:function(newEmail){
+            console.log("watch ",newEmail.email,
+            newEmail.name,
+            newEmail.dob,
+            newEmail.password);
+            this.email=newEmail.email;
+            this.name=newEmail.name;
+            this.dob=newEmail.dob;
+            this.password=newEmail.password;
+            // console.log(newEmail.email);
+        }
+    },
     methods:{
-        submit(){
-            this.$emit("submit-item",this.email,this.name,this.dob);
-            this.email="",
-            this.name="",
-            this.bob=""
+        submit:function(){
+            console.log("Entered value ",
+            this.email,this.name,
+            this.dob,this.password,
+             this.editIndex);
+            if(this.editIndex!== -1){
+                console.log("edit item");
+                this.$emit("edit-item",{
+                    editEmail:this.email,
+                    editName:this.name,
+                    editDob:this.dob,
+                    editPassword:this.password,
+                    editIndex:this.editIndex,
+                });
+            }else{
+                this.$emit("submit-item", this.email,this.name,this.dob,this.password);
+            }
+            this.email="";
+            this.name="";
+            this.dob="";
+            this.password="";
         }
     }
-
 }
+
+
+//         submit:function(){
+//             this.$emit("submit-item",this.email,this.name,this.dob);
+//             this.email="";
+//             this.name="";
+//             this.bob="";
+          
+//             if(this.editIndex!==-1){
+
+                
+//                 this.$emit("submit-ietm",{
+//                    editEmail:this.email,
+//                    editName:this.name,
+//                   editDob:this.dob,
+//                   editPasswor:this.password
+
+//                 });
+//             }
+//             else{
+//                 this.$emit("submit-item",this.email,this.name,this.dob);
+
+//             }
+//             this.email="";
+//             this.name="";
+//             this.password=""
+
+            
+
+            
+//         }
+//     }
+
+// }
 
 
 </script>
