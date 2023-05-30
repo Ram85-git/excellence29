@@ -8,7 +8,7 @@
             <th>Email</th>
             <th>Name</th>
             <th>dob</th>
-            <th>Password</th>
+            <!-- <th>Password</th> -->
             <th>Delete</th>
             <th>Edit</th>
         </tr>
@@ -16,7 +16,7 @@
             <td>{{ item.name }}</td>
             <td>{{ item.email }}</td>
             <td>{{ item.dob }}</td>
-            <td>{{ item.editPassword }}</td>
+            <!-- <td>{{ item.editPassword }}</td> -->
 
             <td>
                 <i class="fa-solid fa-trash" v-on:click.prevent="deleteItem(index)"></i>
@@ -102,7 +102,7 @@ export default{
 </script>
 <style scoped>
 table,tr,td,th {
-    border: 2px solid rgb(231, 45, 132);
+    border: 2px solid rgb(18, 172, 113);
     height:20px;
     width: 200px;
     color:blueviolet;
