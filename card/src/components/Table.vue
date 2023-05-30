@@ -55,9 +55,17 @@ export default{
 </script>
 <style scoped>
 table,tr,td,th {
-    border: 1px solid;
+    border: 2px solid rgb(231, 45, 132);
     height:20px;
     width: 200px;
+    color:blueviolet;
+}
+table {
+    margin-top: 5px;
+    /* margin: auto; */
+    border: 2px solid;
+    width: 800px;
+
 }
 
 
