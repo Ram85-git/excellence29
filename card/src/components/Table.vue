@@ -162,7 +162,7 @@ table,tr,td,th {
     border: 2px solid rgb(18, 172, 113);
     height:20px;
     width: 200px;
-    color:blueviolet;
+    color:rgb(193, 37, 207);
 }
 table {
     margin-top: 5px;
