@@ -1,6 +1,6 @@
 <template>
 
-<button v-on:click="()=>TogglePopup('buttonTrigger')">Open popup form</button>
+<button class="Open-pop" v-on:click="()=>TogglePopup('buttonTrigger')">Open popup Form</button>
 <br><br><br>
   <Popup v-if="popupTriggers.buttonTrigger" :TogglePopup="
   ()=>TogglePopup('buttonTrigger')">
@@ -19,7 +19,7 @@
             <lable for="password">Password</lable><input type="password" placeholder="Password" v-model="password" id="password">
             <lable for="Password">Confirm Password</lable><input type="password" v-model="password" placeholder="Confirm password" id="password">
             <lable for="termsandconditions">Terms and conditions </lable><input type="checkbox" v-model="termsandconditions" id="termsandconditions">
-            <button class="buttonSort">Sort</button>
+            <!-- <button class="buttonSort">Sort</button> -->
         </form>
           <button class="button" v-on:click.prevent="submit()">Submit</button>
           
@@ -189,6 +189,8 @@ export default {
     width: 100px;
     height: 25px;
     margin: auto;
+    color: white;
+    background-color: green;
 }
 .buttonSort{
     width: 100px;
@@ -207,6 +209,11 @@ export default {
 
 #termsandconditions{
     margin-top: -22px;
+}
+.Open-pop{
+    background-color: green;
+    color: white;
+    padding: 5px;
 }
 
 

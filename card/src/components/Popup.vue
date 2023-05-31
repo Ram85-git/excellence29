@@ -16,7 +16,7 @@
     
     export default{
         name:`Popup`,
-        props: ['TogglePop'] 
+        props: ['TogglePopup'] 
     
     }
     
@@ -42,6 +42,10 @@
     }
     .pupup-inner{
         padding: 10px;
+    }
+    .popup-close{
+        color: red;
+    font-size: large;
     }
     
     </style>
