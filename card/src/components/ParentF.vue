@@ -1,5 +1,11 @@
 <template>
-<Form >
+
+<button v-on:click="()=>TogglePopup('buttonTrigger')">Open popup form</button>
+<br><br><br>
+  <Popup v-if="popupTriggers.buttonTrigger" :TogglePopup="
+  ()=>TogglePopup('buttonTrigger')">
+
+ <Form > 
     <template v-slot:title>
         <h1>Application Form</h1>
     </template>
@@ -13,29 +19,62 @@
             <lable for="password">Password</lable><input type="password" placeholder="Password" v-model="password" id="password">
             <lable for="Password">Confirm Password</lable><input type="password" v-model="password" placeholder="Confirm password" id="password">
             <lable for="termsandconditions">Terms and conditions </lable><input type="checkbox" v-model="termsandconditions" id="termsandconditions">
-          </form>
+            <button class="buttonSort">Sort</button>
+        </form>
           <button class="button" v-on:click.prevent="submit()">Submit</button>
+          
+
+       
         </div>
+        
 
     </div>
     </template>
 
-</Form>
+ </Form>
+</Popup>
+<Popup v-if="popupTriggers.timedTrigger">
+    <h2>My Popup</h2>
+    
+  </Popup>
+
+
 </template>
 <script>
+import { ref } from 'vue';
 import Form from './Form.vue';
+import Popup from './Popup.vue';
 export default {
     name:`ParentF`,
     
     components:{
-        Form
+        Form,
+        Popup
     },
+
     data(){
+        const popupTriggers = ref({
+        buttonTrigger: false,
+        timedTrigger: false
+        });
+        const TogglePopup=(trigger)=>{
+        popupTriggers.value[trigger]=!popupTriggers.value[trigger]
+
+      }
+
+
+
+
+
         return{
             email:"",
             name:"",
             password:"",
             dob:"",
+            Popup,
+            popupTriggers,
+            TogglePopup
+
         }
     },
     props:{
@@ -133,10 +172,10 @@ export default {
     flex-direction: column;
     background-color: rgb(187, 35, 218);
     height: 400px;
-    width: 400px;
-    margin: auto;
+    width: 350px;
+    /* margin: auto; */
     gap:8px; 
-      padding: 25px;
+    padding: 20px;
     border: 5px solid rgb(24, 223, 6);
 }
 .form{
@@ -151,14 +190,21 @@ export default {
     height: 25px;
     margin: auto;
 }
-.radial{
+.buttonSort{
+    width: 100px;
+    height: 25px;
+    margin: auto;
+}
+/* .radial{
     height:500px;
     width: 100%;
     background-color: aqua;
     padding: 10px;
-    background-image:linear-gradient(orange,rgb(109, 104, 184));
-    
-}
+
+    /* background-image:linear-gradient(orange,rgb(109, 104, 184)); */
+   /* } */ 
+
+
 #termsandconditions{
     margin-top: -22px;
 }

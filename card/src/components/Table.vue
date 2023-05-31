@@ -91,6 +91,18 @@ export default{
             this.items.splice(index,1);
         },
 
+        // sortTable(){
+        //     console.log("Hello from sort Table");
+        //     if(index==0){
+        //         console.log("you are in Table");
+        //         for(i=0;i<this.items.length;i++){
+        //             this.rows.push(this.items[i].email);
+        //         }
+        //         console.log(this.rows.sort());
+        //         this.rows.sort();
+        //     }
+        // }
+
 
 
         
